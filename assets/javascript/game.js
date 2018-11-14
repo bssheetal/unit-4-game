@@ -2,64 +2,87 @@
 var counter = 0;
 var wins = 0;
 var Losses = 0;
+var windowTimeout;
+var random=0;
+var increment=0;
 
 $(document).ready(function ()
 {
-  begingame();
-});
+    randomtargetnumber();
+    randomcrystalnumber();
 
-function begingame()
-{
-
-    var random = Math.floor(Math.random() * 120) + 19;
-    $("#Random-Number").text(random);
-    var numberOptions = [1, 12];
-    var increment = numberOptions[Math.round(Math.random())];
     $(".PinkCrystal").on("click", function () {
         counter += increment+0;
+        console.log(counter);
         $("#Yourscore").text(counter);
-        scorecheck(random);
+        scorecheck();
     });
 
     $(".GreenCrystal").on("click", function () {
 
         counter += increment+2;
+        console.log(counter);
         $("#Yourscore").text(counter);
-        scorecheck(random);
+        scorecheck();
     });
 
     $(".BlueCrystal").on("click", function () {
         counter += increment+4;
+        console.log(counter);
         $("#Yourscore").text(counter);
-        scorecheck(random);
+        scorecheck();
     });
 
     $(".YellowCrystal").on("click", function () {
         counter += increment+6;
+        console.log(counter);
         $("#Yourscore").text(counter);
-        scorecheck(random);
+        scorecheck();
     });
 
+});
+
+
+
+function randomtargetnumber()
+{
+    random = Math.floor(Math.random() * 120) + 19;
+    $("#Random-Number").text(random);
+    console.log(random);
+  
 }
 
-function scorecheck(random) {
+function randomcrystalnumber()
+{
+    
+    increment = Math.round(Math.random()*12)+1;
+}
+
+function scorecheck() {
     if (random === counter) {
         wins = wins + 1;
-        $("#wins").text(wins);
-        restartgame();
+        $("#wins").text(wins);    
+        windowTimeout = setTimeout(function() {restartgame()}, 1000);
+        windowTimeout=setTimeout(alert("GameOver"),5000);
+        
     }
     else if (counter >= random) {
         Losses = Losses + 1;
-        $("#losses").text(Losses);
-        restartgame();
+        $("#losses").text(Losses);                
+        windowTimeout = setTimeout(function() {restartgame()}, 1000);
+        windowTimeout=setTimeout(alert("GameOver"),5000);
     }
 }
 
 
 function restartgame()
 {
-    counter=0;
+    counter = 0;
+    $("#Yourscore").text(counter);
     wins = 0;
+    $("#wins").text(wins);
     Losses = 0;
-    begingame();
+    $("#losses").text(Losses);     
+    randomtargetnumber();
+    randomcrystalnumber();
 }
