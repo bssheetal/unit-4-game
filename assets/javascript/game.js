@@ -63,14 +63,14 @@ function scorecheck() {
         wins = wins + 1;
         $("#wins").text(wins);    
         windowTimeout = setTimeout(function() {restartgame()}, 1000);
-        windowTimeout=setTimeout(alert("GameOver"),5000);
+        windowTimeout=setTimeout(alert("Hurrah!You won!GameOver"),5000);
         
     }
     else if (counter >= random) {
         Losses = Losses + 1;
         $("#losses").text(Losses);                
         windowTimeout = setTimeout(function() {restartgame()}, 1000);
-        windowTimeout=setTimeout(alert("GameOver"),5000);
+        windowTimeout=setTimeout(alert("Oops!Better luck next time!GameOver"),5000);
     }
 }
 
