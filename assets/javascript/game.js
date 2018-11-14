@@ -1,4 +1,7 @@
 
+// VARIABLES
+// ==========================================================================   
+//We start the game with wins and losses of 0 
 var counter = 0;
 var wins = 0;
 var Losses = 0;
@@ -8,9 +11,12 @@ var increment=0;
 
 $(document).ready(function ()
 {
+    //Call function to generate random target number
     randomtargetnumber();
+     //Call function to generate a random crystal number
     randomcrystalnumber();
 
+    //Click on each crystals to get random crystal number  to match the random target number
     $(".PinkCrystal").on("click", function () {
         counter += increment+0;
         console.log(counter);
@@ -43,7 +49,7 @@ $(document).ready(function ()
 });
 
 
-
+//Function that generates random target number
 function randomtargetnumber()
 {
     random = Math.floor(Math.random() * 120) + 19;
@@ -52,12 +58,14 @@ function randomtargetnumber()
   
 }
 
+//Function that generates random crystal number
 function randomcrystalnumber()
 {
     
     increment = Math.round(Math.random()*12)+1;
 }
 
+//Function defenition to verify the score where crystalclicks equal to randomnumber
 function scorecheck() {
     if (random === counter) {
         wins = wins + 1;
@@ -66,6 +74,8 @@ function scorecheck() {
         windowTimeout=setTimeout(alert("Hurrah!You won!GameOver"),5000);
         
     }
+
+    //Function defenition to verify the score where crystalclicks greater than randomnumber
     else if (counter >= random) {
         Losses = Losses + 1;
         $("#losses").text(Losses);                
@@ -75,6 +85,7 @@ function scorecheck() {
 }
 
 
+//Function to restart game after each win or loss
 function restartgame()
 {
     counter = 0;
