@@ -1,0 +1,62 @@
+.PinkCrystal
+{
+   
+    width: 100px;
+    height: 108px; 
+    margin-left: 10px; 
+    margin-right: 0px; 
+    margin-top: 151px;
+}
+
+.GreenCrystal
+{
+    width: 108px;
+    height: 108px; 
+    margin-left: -237px; 
+    margin-right: 0px; 
+    margin-top: 151px;
+}
+
+.BlueCrystal
+{
+    width: 108px;
+    height: 108px; 
+    margin-left: -472px; 
+    margin-right: 0px; 
+    margin-top: 151px; 
+}
+
+.YellowCrystal
+{
+    width: 108px;
+    height: 108px; 
+    margin-left: -702px; 
+    margin-right: 0px; 
+    margin-top: 151px; 
+}
+
+h3
+{
+    margin-left: 0px; 
+
+}
+
+#Random-Number
+{
+    margin-top: 15px;
+}
+
+#wins
+{
+    margin-top: 15px;
+}
+
+#losses
+{
+    margin-top: 15px;
+}
+
+#Yourscore
+{
+    margin-top: 15px;
+}
