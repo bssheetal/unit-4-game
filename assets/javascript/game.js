@@ -90,10 +90,10 @@ function restartgame()
 {
     counter = 0;
     $("#Yourscore").text(counter);
-    wins = 0;
-    $("#wins").text(wins);
-    Losses = 0;
-    $("#losses").text(Losses);     
+    //wins = 0;
+    //$("#wins").text(wins);
+    //Losses = 0;
+    //$("#losses").text(Losses);     
     randomtargetnumber();
     randomcrystalnumber();
 }
